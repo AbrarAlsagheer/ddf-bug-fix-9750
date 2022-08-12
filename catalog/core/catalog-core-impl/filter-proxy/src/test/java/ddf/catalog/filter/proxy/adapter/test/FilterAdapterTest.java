@@ -623,9 +623,7 @@ public class FilterAdapterTest {
     // Use fake delegate to return fake result to verify operation
     // This will only return the expected result if the relative temporal path is followed
     FilterDelegate mockFilterDelegate = mock(FilterDelegate.class);
-    doReturn(Boolean.TRUE)
-        .when(mockFilterDelegate)
-        .propertyIsBetween(any(), any(Date.class), any(Date.class));
+    doReturn(Boolean.TRUE).when(mockFilterDelegate).during(any(), any(Date.class), any(Date.class));
 
     try {
       GeotoolsFilterAdapterImpl geotoolsFilterAdapter = new GeotoolsFilterAdapterImpl();

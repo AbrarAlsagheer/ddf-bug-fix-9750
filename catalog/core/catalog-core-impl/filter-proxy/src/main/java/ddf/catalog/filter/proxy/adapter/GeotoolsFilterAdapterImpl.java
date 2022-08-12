@@ -351,7 +351,8 @@ public class GeotoolsFilterAdapterImpl implements FilterAdapter, FilterVisitor, 
       DateTime pastDateTime = currentDateTime.minus(period);
 
       return ((FilterDelegate<?>) delegate)
-          .propertyIsBetween(propertyName, pastDateTime.toDate(), currentDateTime.toDate());
+          .during(propertyName, pastDateTime.toDate(), currentDateTime.toDate());
+
     }
 
     if (functionName != null) {
